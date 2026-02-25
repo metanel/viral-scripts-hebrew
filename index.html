@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>השועלה הוויראלית | תסריטים שמייצרים כסף ברוגע</title>
-    <meta name="description" content="הגעתם למקום הבטוח. מחולל תסריטים ויראליים מבוסס AI - הראשון בעברית ובחינם לגמרי! מיועד לקהל הישראלי ליצירת סרטונים בקלות.">
+    <meta name="description" content="מחולל תסריטים ויראליים מבוסס AI - הראשון בעברית ובחינם לגמרי! מיועד לקהל הישראלי ליצירת סרטונים בקלות.">
     
     <meta property="og:title" content="השועלה הוויראלית: תסריט מוכן ומכניס בתוך שניות 🦊">
     <meta property="og:description" content="ה-AI הראשון מסוגו בעברית ובחינם! תשענו לאחור, והשועלה תכתוב לכם תסריט ויראלי מוכן לצילום.">
@@ -14,8 +14,7 @@
 
     <style>
         :root {
-            /* פלטת צבעים: חמימות, רוגע, ביטחון וכסף */
-            --warm-bg: #FDFBF7; 
+            var(--warm-bg): #FDFBF7; 
             --money-green: #10B981; 
             --deep-green: #064E3B; 
             --sun-yellow: #F59E0B; 
@@ -24,7 +23,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--warm-bg);
+            background-color: #FDFBF7;
             color: var(--deep-green);
             margin: 0;
             line-height: 1.6;
@@ -35,9 +34,9 @@
 
         header {
             width: 100%;
-            padding: 50px 20px 30px;
+            padding: 50px 20px 20px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(245,158,11,0.1) 0%, var(--warm-bg) 100%);
+            background: linear-gradient(180deg, rgba(245,158,11,0.1) 0%, #FDFBF7 100%);
         }
 
         .logo-area img {
@@ -49,164 +48,99 @@
             margin-bottom: 15px;
         }
 
-        h1 { 
-            font-size: 2.8rem; 
-            margin: 10px 0; 
-            color: var(--deep-green); 
-            font-weight: 800;
-        }
+        h1 { font-size: 2.8rem; margin: 10px 0; color: var(--deep-green); font-weight: 800; }
 
-        .badges {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0 20px;
-            flex-wrap: wrap;
-        }
+        .badges { display: flex; justify-content: center; gap: 15px; margin: 15px 0 20px; flex-wrap: wrap; }
+        .badge { background-color: var(--money-green); color: white; padding: 8px 18px; border-radius: 30px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2); display: flex; align-items: center; gap: 8px; }
+        .highlight { background: linear-gradient(120deg, rgba(245,158,11,0.4) 0%, rgba(245,158,11,0) 100%); padding: 0 10px; border-radius: 5px; }
+        .tagline { font-size: 1.3rem; max-width: 700px; margin: 0 auto; color: #374151; font-weight: 500; }
 
-        .badge {
-            background-color: var(--money-green);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        main { width: 95%; max-width: 900px; margin: 20px auto 50px auto; }
+
+        /* עיצוב המדריך (3 צעדים) */
+        .guide-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid #E5E7EB;
         }
         
-        .highlight {
-            background: linear-gradient(120deg, rgba(245,158,11,0.4) 0%, rgba(245,158,11,0) 100%);
-            padding: 0 10px;
-            border-radius: 5px;
+        .guide-title { text-align: center; color: var(--deep-green); font-size: 1.5rem; margin-top: 0; }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .tagline { 
-            font-size: 1.3rem; 
-            max-width: 700px; 
-            margin: 0 auto; 
-            color: #374151;
-            font-weight: 500;
-        }
-
-        main {
-            width: 95%;
-            max-width: 1000px;
-            margin: 10px auto 50px auto;
-        }
-
-        .login-tip {
-            text-align: center;
-            background-color: rgba(245, 158, 11, 0.15);
-            color: #B45309;
-            padding: 12px 20px;
+        .step-card {
+            background: #F9FAFB;
+            padding: 20px;
             border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            border: 2px dashed rgba(245, 158, 11, 0.4);
-        }
-
-        /* עיצוב אזור ההזנקה החדש במקום ה-iframe */
-        .chat-launchpad {
-            background: var(--card-bg);
-            border-radius: 24px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            border: 1px dashed #D1D5DB;
         }
 
-        .chat-launchpad img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
+        .step-icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+        .step-card h4 { margin: 0 0 10px 0; color: #1F2937; }
+        .step-card p { margin: 0; font-size: 0.95rem; color: #4B5563; }
 
-        .chat-launchpad h3 {
-            font-size: 1.8rem;
-            color: var(--deep-green);
-            margin: 0 0 10px 0;
-        }
-
-        .chat-launchpad p {
-            font-size: 1.2rem;
-            color: #4B5563;
-            max-width: 500px;
-            margin-bottom: 30px;
+        /* אזור ההזנקה החיצוני */
+        .chat-launchpad {
+            background: rgba(245, 158, 11, 0.05);
+            border-radius: 24px;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            padding: 40px 20px;
+            text-align: center;
         }
 
         .btn-launch {
             display: inline-block;
             background: var(--sun-yellow);
             color: var(--deep-green);
-            padding: 18px 40px;
-            font-size: 1.4rem;
+            padding: 16px 35px;
+            font-size: 1.3rem;
             font-weight: 800;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 15px rgba(245, 158, 11, 0.3);
+            margin-top: 15px;
         }
 
-        .btn-launch:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 25px rgba(245, 158, 11, 0.4);
-            background: #D97706;
-            color: white;
-        }
+        .btn-launch:hover { transform: translateY(-2px); box-shadow: 0 12px 20px rgba(245, 158, 11, 0.4); background: #D97706; color: white; }
+        
+        .external-note { font-size: 0.85rem; color: #6B7280; margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 5px; }
 
-        .cta-container {
-            text-align: center;
-            padding: 50px 20px;
-            width: 100%;
-            background-color: rgba(16, 185, 129, 0.05);
-            border-top: 2px dashed rgba(16, 185, 129, 0.2);
-        }
-
-        .cta-card {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        /* כפתור הוובינר הגדול למטה */
+        .cta-container { text-align: center; padding: 50px 20px; width: 100%; background-color: rgba(16, 185, 129, 0.05); border-top: 2px dashed rgba(16, 185, 129, 0.2); }
+        .cta-card { max-width: 800px; margin: 0 auto; }
         .cta-card h2 { color: var(--deep-green); }
 
-        .btn {
+        .btn-webinar {
             display: inline-block;
             background: var(--money-green);
             color: white;
-            padding: 20px 45px;
-            font-size: 1.4rem;
+            padding: 22px 50px;
+            font-size: 1.5rem;
             font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
             margin-top: 25px;
+            animation: pulse 2s infinite;
         }
 
-        .btn:hover { 
-            transform: translateY(-3px) scale(1.02); 
-            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.4); 
-            background: #059669; 
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); box-shadow: 0 15px 25px rgba(16, 185, 129, 0.5); } 100% { transform: scale(1); } }
+        .btn-webinar:hover { background: #059669; animation: none; transform: translateY(-3px); }
 
         footer { padding: 30px; color: #6B7280; font-size: 0.9rem; text-align: center; }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .badge { font-size: 1rem; }
-            .login-tip { font-size: 1rem; padding: 10px; }
-            .chat-launchpad { padding: 40px 15px; }
-            .btn, .btn-launch { font-size: 1.1rem; width: 85%; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .steps-container { grid-template-columns: 1fr; } .btn-webinar { font-size: 1.2rem; width: 85%; padding: 18px 20px; } }
     </style>
 </head>
 <body>
@@ -222,32 +156,53 @@
             <span class="badge">🎁 חינם לגמרי</span>
         </div>
 
-        <p class="tagline">רוב כלי ה-AI מסובכים, באנגלית ובתשלום. כאן הגעתם למקום הבטוח. תשענו לאחור, תנו לשועלה לכתוב לכם <span class="highlight">תסריטים שמייצרים כסף</span> - ואתם רק תצלמו.</p>
+        <p class="tagline">רוב כלי ה-AI מסובכים, באנגלית ובתשלום. כאן הגעתם למקום הבטוח. תנו לשועלה לכתוב לכם <span class="highlight">תסריטים שמייצרים כסף</span> - ואתם רק תצלמו.</p>
     </header>
 
     <main role="main">
-        <div class="login-tip">
-            💡 <strong>טיפ קטן:</strong> התחברו בחינם דרך גוגל והשועלה תייצר לכם תסריט ויראלי תוך שניות!
-        </div>
+        
+        <section class="guide-section">
+            <h3 class="guide-title">איך זה עובד? ב-3 צעדים פשוטים:</h3>
+            <div class="steps-container">
+                <div class="step-card">
+                    <span class="step-icon">1️⃣</span>
+                    <h4>פותחים ומתחברים</h4>
+                    <p>לוחצים על הכפתור למטה ומתחברים למערכת בחינם (דרך חשבון Google).</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-icon">2️⃣</span>
+                    <h4>מגדירים נישה</h4>
+                    <p>כותבים לשועלה מה התחום שלכם (למשל: "נדל"ן"), ומקבלים תסריט מוכן.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-icon">3️⃣</span>
+                    <h4>חוזרים לכאן</h4>
+                    <p>מעתיקים את התסריט, וחוזרים לאתר הזה כדי ללמוד איך להפוך אותו לסרטון!</p>
+                </div>
+            </div>
+        </section>
 
         <section class="chat-launchpad">
-            <img src="קישור_לתמונת_השועלה_שלך_כאן" alt="סמל צ'אט">
-            <h3>השועלה מחכה לנישה שלכם!</h3>
-            <p>לחצו על הכפתור למטה כדי לפתוח את חדר הצ'אט המאובטח שלנו ולהתחיל לייצר תסריטים.</p>
+            <h3>מוכנים להתחיל?</h3>
+            <p>השועלה מחכה לכם עכשיו בחדר הצ'אט כדי לייצר לכם את התסריט הראשון.</p>
             
-            <a href="https://poe.com/Viral_Fox" target="_blank" class="btn-launch">
-                💬 פתחו את הצ'אט עכשיו
+            <a href="https://poe.com/Viral_Fox" target="_blank" rel="noopener noreferrer" class="btn-launch">
+                למעבר למחולל התסריטים (חלון חדש) ↗️
             </a>
+            
+            <div class="external-note">
+                🔒 הצ'אט מתארח ומופעל על גבי פלטפורמת Poe העולמית לאבטחה מירבית.
+            </div>
         </section>
     </main>
 
     <section class="cta-container">
         <div class="cta-card">
             <h2>יש לכם תסריט ביד? עכשיו בואו נהפוך אותו ללקוחות משלמים.</h2>
-            <p style="font-size: 1.2rem; color: #4B5563;">בואו למפגש אקסקלוסיבי ללא עלות: איך להפיק מהתסריטים האלה סרטונים ויראליים מהספה, לקדם אותם בלי קמפיינר, ולבנות מערכת שמביאה לקוחות.</p>
+            <p style="font-size: 1.2rem; color: #4B5563;">בואו למפגש אקסקלוסיבי ללא עלות: איך להפיק מהתסריטים האלה סרטונים ויראליים מהספה, לקדם אותם בלי קמפיינר, ולבנות דף נחיתה משלכם.</p>
             
-            <a href="קישור_לדף_הנחיתה_שלך" class="btn">
-                הירשמו למפגש החינמי והתחילו לצמוח 🚀
+            <a href="קישור_לדף_הנחיתה_שלך" class="btn-webinar">
+                לשריון מקום במפגש החינמי 🚀
             </a>
             
             <p style="margin-top:20px; font-size: 0.9rem; color: #9CA3AF;">* המפגש ללא עלות, אך מספר המקומות מוגבל.</p>
