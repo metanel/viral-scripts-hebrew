@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>השועלה הוויראלית | תסריטים שמייצרים כסף ברוגע</title>
-    <meta name="description" content="הגעתם למקום הבטוח. תנו לשועלה הוויראלית לכתוב לכם תסריטים מנצחים שמייצרים לקוחות, בזמן שאתם נחים. עברית. חינם.">
+    <meta name="description" content="הגעתם למקום הבטוח. מחולל תסריטים ויראליים מבוסס AI - הראשון בעברית ובחינם לגמרי! מיועד לקהל הישראלי ליצירת סרטונים בקלות.">
     
     <meta property="og:title" content="השועלה הוויראלית: תסריט מוכן ומכניס בתוך שניות 🦊">
-    <meta property="og:description" content="תשענו לאחור. ה-AI שלנו יכתוב לכם תסריט ויראלי מוכן לצילום.">
+    <meta property="og:description" content="ה-AI הראשון מסוגו בעברית ובחינם! תשענו לאחור, והשועלה תכתוב לכם תסריט ויראלי מוכן לצילום.">
     <meta property="og:image" content="קישור_לתמונת_השועלה_שלך_כאן"> 
     <meta property="og:url" content="https://yourusername.github.io/viral-fox-hebrew/">
     <meta property="og:type" content="website">
 
     <style>
         :root {
-            /* הפלטה החדשה: חמימות, רוגע וכסף */
-            --warm-bg: #FDFBF7; /* שמנת עדינה מאוד לרקע */
-            --money-green: #10B981; /* ירוק אמרלד משדר צמיחה ועושר */
-            --deep-green: #064E3B; /* ירוק כהה לטקסטים (יותר רגוע משחור) */
-            --sun-yellow: #F59E0B; /* צהוב-זהב חם */
+            /* פלטת צבעים: חמימות, רוגע, ביטחון וכסף */
+            --warm-bg: #FDFBF7; 
+            --money-green: #10B981; 
+            --deep-green: #064E3B; 
+            --sun-yellow: #F59E0B; 
             --card-bg: #FFFFFF;
         }
 
@@ -37,7 +37,6 @@
             width: 100%;
             padding: 50px 20px 30px;
             text-align: center;
-            /* גרדיאנט עדין שנותן תחושת שמש/חמימות מלמעלה */
             background: linear-gradient(180deg, rgba(245,158,11,0.1) 0%, var(--warm-bg) 100%);
         }
 
@@ -56,8 +55,29 @@
             color: var(--deep-green); 
             font-weight: 800;
         }
+
+        /* תגיות הבידול (עברית וחינם) */
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: var(--money-green);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         
-        /* הדגשה בצהוב מתחת למילה החשובה */
         .highlight {
             background: linear-gradient(120deg, rgba(245,158,11,0.4) 0%, rgba(245,158,11,0) 100%);
             padding: 0 10px;
@@ -66,7 +86,7 @@
 
         .tagline { 
             font-size: 1.3rem; 
-            max-width: 650px; 
+            max-width: 700px; 
             margin: 0 auto; 
             color: #374151;
             font-weight: 500;
@@ -75,17 +95,30 @@
         main {
             width: 95%;
             max-width: 1000px;
-            margin: 20px auto 50px auto;
+            margin: 10px auto 50px auto;
         }
 
-        /* עיצוב הצ'אט - רך, לבן ומזמין */
+        /* עיצוב טיפ ההתחברות מעל הצ'אט */
+        .login-tip {
+            text-align: center;
+            background-color: rgba(245, 158, 11, 0.15);
+            color: #B45309;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            border: 2px dashed rgba(245, 158, 11, 0.4);
+        }
+
+        /* עיצוב הצ'אט */
         .chat-frame {
             background: var(--card-bg);
             border-radius: 24px;
             border: 1px solid rgba(16, 185, 129, 0.2);
             height: 70vh;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* צל רך מאוד */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         iframe { width: 100%; height: 100%; border: none; }
@@ -94,7 +127,7 @@
             text-align: center;
             padding: 50px 20px;
             width: 100%;
-            background-color: rgba(16, 185, 129, 0.05); /* רקע ירוק עדין מאוד */
+            background-color: rgba(16, 185, 129, 0.05);
             border-top: 2px dashed rgba(16, 185, 129, 0.2);
         }
 
@@ -105,7 +138,6 @@
 
         .cta-card h2 { color: var(--deep-green); }
 
-        /* כפתור ה"כסף" הירוק */
         .btn {
             display: inline-block;
             background: var(--money-green);
@@ -114,7 +146,7 @@
             font-size: 1.4rem;
             font-weight: 800;
             text-decoration: none;
-            border-radius: 50px; /* עגול ורך */
+            border-radius: 50px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
             margin-top: 25px;
@@ -123,13 +155,15 @@
         .btn:hover { 
             transform: translateY(-3px) scale(1.02); 
             box-shadow: 0 15px 25px rgba(16, 185, 129, 0.4); 
-            background: #059669; /* ירוק טיפה יותר עמוק במעבר עכבר */
+            background: #059669; 
         }
 
         footer { padding: 30px; color: #6B7280; font-size: 0.9rem; text-align: center; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 1.9rem; }
+            h1 { font-size: 2.2rem; }
+            .badge { font-size: 1rem; }
+            .login-tip { font-size: 1rem; padding: 10px; }
             .chat-frame { height: 65vh; }
             .btn { font-size: 1.1rem; width: 85%; }
         }
@@ -142,10 +176,20 @@
             <img src="קישור_לתמונת_השועלה_שלך_כאן" alt="השועלה הוויראלית - AI בעברית">
         </div>
         <h1>השועלה הוויראלית 🦊</h1>
-        <p class="tagline">הגעתם למקום הבטוח. תשענו לאחור, תנו לשועלה לכתוב לכם <span class="highlight">תסריטים שמייצרים כסף</span> - ואתם רק תצלמו.</p>
+        
+        <div class="badges">
+            <span class="badge">🇮🇱 100% מותאם לעברית</span>
+            <span class="badge">🎁 חינם לגמרי</span>
+        </div>
+
+        <p class="tagline">רוב כלי ה-AI מסובכים, באנגלית ובתשלום. כאן הגעתם למקום הבטוח. תשענו לאחור, תנו לשועלה לכתוב לכם <span class="highlight">תסריטים שמייצרים כסף</span> - ואתם רק תצלמו.</p>
     </header>
 
     <main role="main">
+        <div class="login-tip">
+            💡 <strong>טיפ קטן:</strong> התחברו בחינם דרך גוגל והשועלה תייצר לכם תסריט ויראלי תוך שניות!
+        </div>
+
         <section class="chat-frame">
             <iframe 
                 src="https://poe.com/Viral_Fox" 
