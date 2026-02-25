@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="theme-color" content="#FDFBF7">
+    
     <title>השועלה הוויראלית | תסריטים שמייצרים כסף ברוגע</title>
     <meta name="description" content="מחולל תסריטים ויראליים מבוסס AI - הראשון בעברית ובחינם לגמרי! מיועד לקהל הישראלי ליצירת סרטונים בקלות.">
     
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="השועלה הוויראלית: תסריט מוכן ומכניס בתוך שניות 🦊">
     <meta property="og:description" content="ה-AI הראשון מסוגו בעברית ובחינם! תשענו לאחור, והשועלה תכתוב לכם תסריט ויראלי מוכן לצילום.">
     <meta property="og:url" content="https://yourusername.github.io/viral-fox-hebrew/">
-    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="השועלה הוויראלית">
+    
+    <meta property="og:image" content="https://res.cloudinary.com/dhkn7tjxq/image/upload/v1772024125/IMG_2192_z2oade.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="השועלה הוויראלית: תסריט מוכן ומכניס בתוך שניות 🦊">
+    <meta name="twitter:description" content="ה-AI הראשון מסוגו בעברית ובחינם! תשענו לאחור, והשועלה תכתוב לכם תסריט ויראלי מוכן לצילום.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dhkn7tjxq/image/upload/v1772024125/IMG_2192_z2oade.png">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <style>
+        /* ביטול גלילה אופקית (ימינה-שמאלה) ותיקון חישוב רוחב האלמנטים */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         :root {
             var(--warm-bg): #FDFBF7; 
             --money-green: #10B981; 
@@ -56,25 +82,25 @@
 
         main { width: 95%; max-width: 900px; margin: 20px auto 50px auto; }
 
-.guide-section {
-    background: var(--card-bg);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
-    border: 1px solid #E5E7EB;
-}
-.guide-title { text-align: center; color: var(--deep-green); font-size: 1.2rem; margin-bottom: 15px; font-weight: 800; }
-.steps-list { display: flex; flex-direction: column; gap: 12px; }
-.step-item { display: flex; align-items: center; gap: 15px; background: #F9FAFB; padding: 10px 15px; border-radius: 12px; border-right: 4px solid var(--sun-yellow); }
-.step-number { background: var(--sun-yellow); color: var(--deep-green); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.9rem; }
-.step-content h4 { margin: 0; font-size: 1rem; color: var(--deep-green); }
-.step-content p { margin: 2px 0 0 0; font-size: 0.85rem; color: #6B7280; line-height: 1.3; }
+        .guide-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            border: 1px solid #E5E7EB;
+        }
+        .guide-title { text-align: center; color: var(--deep-green); font-size: 1.2rem; margin-bottom: 15px; font-weight: 800; }
+        .steps-list { display: flex; flex-direction: column; gap: 12px; }
+        .step-item { display: flex; align-items: center; gap: 15px; background: #F9FAFB; padding: 10px 15px; border-radius: 12px; border-right: 4px solid var(--sun-yellow); }
+        .step-number { background: var(--sun-yellow); color: var(--deep-green); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.9rem; }
+        .step-content h4 { margin: 0; font-size: 1rem; color: var(--deep-green); }
+        .step-content p { margin: 2px 0 0 0; font-size: 0.85rem; color: #6B7280; line-height: 1.3; }
 
-@media (min-width: 769px) {
-    .steps-list { flex-direction: row; }
-    .step-item { flex: 1; flex-direction: column; text-align: center; border-right: none; border-top: 4px solid var(--sun-yellow); }
-}
+        @media (min-width: 769px) {
+            .steps-list { flex-direction: row; }
+            .step-item { flex: 1; flex-direction: column; text-align: center; border-right: none; border-top: 4px solid var(--sun-yellow); }
+        }
 
         /* אזור ההזנקה החיצוני */
         .chat-launchpad {
@@ -128,7 +154,25 @@
 
         footer { padding: 30px; color: #6B7280; font-size: 0.9rem; text-align: center; }
 
-        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .steps-container { grid-template-columns: 1fr; } .btn-webinar { font-size: 1.2rem; width: 85%; padding: 18px 20px; } }
+        /* התאמות מיוחדות למובייל ולמסכים קטנים */
+        @media (max-width: 768px) { 
+            /* התאמת גדלי כותרות וטקסטים */
+            h1 { font-size: 2.2rem; } 
+            .tagline { font-size: 1.1rem; }
+            .cta-card p { font-size: 1rem !important; }
+
+            /* צמצום ריווחים כדי להשאיר את התוכן החשוב מול העיניים */
+            header { padding: 30px 15px 15px; }
+            .cta-container { padding: 30px 15px; }
+            .chat-launchpad { padding: 25px 15px; }
+
+            /* התאמת כפתור הוובינר */
+            .btn-webinar { 
+                font-size: 1.1rem; 
+                width: 90%; 
+                padding: 15px 20px; 
+            } 
+        }
     </style>
 </head>
 <body>
@@ -147,31 +191,31 @@
     <main role="main">
         
         <section class="guide-section">
-    <h3 class="guide-title">איך זה עובד?</h3>
-    <div class="steps-list">
-        <div class="step-item">
-            <div class="step-number">1</div>
-            <div class="step-content">
-                <h4>מתחברים</h4>
-                <p>לחיצה קלה ומתחברים בחינם דרך גוגל.</p>
+            <h3 class="guide-title">איך זה עובד?</h3>
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>מתחברים</h4>
+                        <p>לחיצה קלה ומתחברים בחינם דרך גוגל.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>מקבלים תסריט</h4>
+                        <p>השועלה בונה לכם תסריט ויראלי בשניות.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>ה-AI מייצר סרטון</h4>
+                        <p>חוזרים לכאן ללמוד איך ה-AI מצלם הכל מהספה!</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="step-item">
-            <div class="step-number">2</div>
-            <div class="step-content">
-                <h4>מקבלים תסריט</h4>
-                <p>השועלה בונה לכם תסריט ויראלי בשניות.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-number">3</div>
-            <div class="step-content">
-                <h4>ה-AI מייצר סרטון</h4>
-                <p>חוזרים לכאן ללמוד איך ה-AI מצלם הכל מהספה!</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section class="chat-launchpad">
             <h3>מוכנים להתחיל?</h3>
