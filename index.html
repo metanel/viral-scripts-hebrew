@@ -20,15 +20,10 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="השועלה הוויראלית: תסריט מוכן בתוך שניות 🦊">
-    <meta name="twitter:description" content="ה-AI הראשון מסוגו בעברית ובחינם! תשענו לאחור, והשועלה תכתוב לכם תסריט ויראלי מוכן לצילום.">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dhkn7tjxq/image/upload/v1772024125/IMG_2192_z2oade.png">
-
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <style>
-        /* ביטול גלילה אופקית (ימינה-שמאלה) ותיקון חישוב רוחב האלמנטים */
+        /* יסודות העיצוב */
         html, body {
             overflow-x: hidden;
             max-width: 100%;
@@ -39,10 +34,11 @@
         }
 
         :root {
-            var(--warm-bg): #FDFBF7; 
+            --warm-bg: #FDFBF7; 
             --money-green: #10B981; 
             --deep-green: #064E3B; 
             --sun-yellow: #F59E0B; 
+            --dark-yellow: #D97706; /* צבע לצל התלת ממדי */
             --card-bg: #FFFFFF;
         }
 
@@ -64,15 +60,6 @@
             background: linear-gradient(180deg, rgba(245,158,11,0.1) 0%, #FDFBF7 100%);
         }
 
-        .logo-area img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 4px solid var(--sun-yellow);
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
-            margin-bottom: 15px;
-        }
-
         h1 { font-size: 2.8rem; margin: 10px 0; color: var(--deep-green); font-weight: 800; }
 
         .badges { display: flex; justify-content: center; gap: 15px; margin: 15px 0 20px; flex-wrap: wrap; }
@@ -82,6 +69,46 @@
 
         main { width: 95%; max-width: 900px; margin: 20px auto 50px auto; }
 
+        /* עיצוב כפתור תלת ממדי משודרג */
+        .btn-launch {
+            display: inline-block;
+            background: var(--sun-yellow);
+            color: var(--deep-green);
+            padding: 20px 45px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 15px;
+            margin-top: 15px;
+            position: relative;
+            /* אפקט תלת ממד באמצעות צל קשיח */
+            box-shadow: 0 8px 0 var(--dark-yellow), 0 15px 20px rgba(0,0,0,0.15);
+            transition: all 0.1s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-launch:hover {
+            background: #FFB32E; /* צהוב מעט בהיר יותר */
+            transform: translateY(2px);
+            box-shadow: 0 6px 0 var(--dark-yellow), 0 10px 15px rgba(0,0,0,0.15);
+        }
+
+        .btn-launch:active {
+            transform: translateY(8px); /* הכפתור יורד עד גובה הצל */
+            box-shadow: 0 0px 0 var(--dark-yellow), 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .chat-launchpad {
+            background: rgba(245, 158, 11, 0.05);
+            border-radius: 24px;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px; /* רווח לפני החלק הבא */
+        }
+
+        /* עיצוב חלק "איך זה עובד" */
         .guide-section {
             background: var(--card-bg);
             border-radius: 16px;
@@ -102,38 +129,10 @@
             .step-item { flex: 1; flex-direction: column; text-align: center; border-right: none; border-top: 4px solid var(--sun-yellow); }
         }
 
-        /* אזור ההזנקה החיצוני */
-        .chat-launchpad {
-            background: rgba(245, 158, 11, 0.05);
-            border-radius: 24px;
-            border: 2px solid rgba(245, 158, 11, 0.3);
-            padding: 40px 20px;
-            text-align: center;
-        }
+        .external-note { font-size: 0.85rem; color: #6B7280; margin-top: 25px; display: flex; align-items: center; justify-content: center; gap: 5px; }
 
-        .btn-launch {
-            display: inline-block;
-            background: var(--sun-yellow);
-            color: var(--deep-green);
-            padding: 16px 35px;
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-            box-shadow: 0 8px 15px rgba(245, 158, 11, 0.3);
-            margin-top: 15px;
-        }
-
-        .btn-launch:hover { transform: translateY(-2px); box-shadow: 0 12px 20px rgba(245, 158, 11, 0.4); background: #D97706; color: white; }
-        
-        .external-note { font-size: 0.85rem; color: #6B7280; margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 5px; }
-
-        /* כפתור הוובינר הגדול למטה */
+        /* כפתור הוובינר התחתון */
         .cta-container { text-align: center; padding: 50px 20px; width: 100%; background-color: rgba(16, 185, 129, 0.05); border-top: 2px dashed rgba(16, 185, 129, 0.2); }
-        .cta-card { max-width: 800px; margin: 0 auto; }
-        .cta-card h2 { color: var(--deep-green); }
-
         .btn-webinar {
             display: inline-block;
             background: var(--money-green);
@@ -150,28 +149,13 @@
         }
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); box-shadow: 0 15px 25px rgba(16, 185, 129, 0.5); } 100% { transform: scale(1); } }
-        .btn-webinar:hover { background: #059669; animation: none; transform: translateY(-3px); }
-
+        
         footer { padding: 30px; color: #6B7280; font-size: 0.9rem; text-align: center; }
 
-        /* התאמות מיוחדות למובייל ולמסכים קטנים */
         @media (max-width: 768px) { 
-            /* התאמת גדלי כותרות וטקסטים */
             h1 { font-size: 2.2rem; } 
-            .tagline { font-size: 1.1rem; }
-            .cta-card p { font-size: 1rem !important; }
-
-            /* צמצום ריווחים כדי להשאיר את התוכן החשוב מול העיניים */
-            header { padding: 30px 15px 15px; }
-            .cta-container { padding: 30px 15px; }
-            .chat-launchpad { padding: 25px 15px; }
-
-            /* התאמת כפתור הוובינר */
-            .btn-webinar { 
-                font-size: 1.1rem; 
-                width: 90%; 
-                padding: 15px 20px; 
-            } 
+            .btn-launch { font-size: 1.2rem; width: 90%; padding: 15px; }
+            .btn-webinar { font-size: 1.1rem; width: 90%; padding: 15px 20px; } 
         }
     </style>
 </head>
@@ -190,6 +174,19 @@
 
     <main role="main">
         
+        <section class="chat-launchpad">
+            <h3>מוכנים להתחיל?</h3>
+            <p>השועלה מחכה לכם עכשיו בחדר הצ'אט כדי לייצר לכם את התסריט הראשון.</p>
+            
+            <a href="https://poe.com/Viral_Fox" target="_blank" rel="noopener noreferrer" class="btn-launch">
+                למעבר למחולל התסריטים ↗️
+            </a>
+            
+            <div class="external-note">
+                🔒 הצ'אט מתארח ומופעל על גבי פלטפורמת Poe העולמית.
+            </div>
+        </section>
+
         <section class="guide-section">
             <h3 class="guide-title">איך זה עובד?</h3>
             <div class="steps-list">
@@ -211,36 +208,22 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h4>מגיעים למפגש חשיפה</h4>
-                        <p>ללמוד איך הבינה המלאכותית מייצרת את הסרטון בלי לקום מהספה!</p>
+                        <p>ללמוד איך ה-AI מייצר סרטון בלי לקום מהספה!</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="chat-launchpad">
-            <h3>מוכנים להתחיל?</h3>
-            <p>השועלה מחכה לכם עכשיו בחדר הצ'אט כדי לייצר לכם את התסריט הראשון.</p>
-            
-            <a href="https://poe.com/Viral_Fox" target="_blank" rel="noopener noreferrer" class="btn-launch">
-                למעבר למחולל התסריטים (חלון חדש) ↗️
-            </a>
-            
-            <div class="external-note">
-                🔒 הצ'אט מתארח ומופעל על גבי פלטפורמת Poe העולמית לאבטחה מירבית.
-            </div>
-        </section>
     </main>
 
     <section class="cta-container">
         <div class="cta-card">
-            <h2>יש לכם תסריט? בואו לראות איך להפוך אותו לסרטון ויראלי מהספה (בלי שתצטרכו לצלם פריים אחד!).</h2>
-            <p style="font-size: 1.2rem; color: #4B5563;">בואו למפגש חשיפה ללא עלות: איך להפיק מהתסריטים האלה סרטונים ויראליים מהספה, לקדם אותם בלי קמפיינר, ולבנות דף נחיתה משלכם.</p>
+            <h2>יש לכם תסריט? בואו לראות איך להפוך אותו לסרטון ויראלי מהספה.</h2>
+            <p style="font-size: 1.2rem; color: #4B5563;">בואו למפגש חשיפה ללא עלות: איך להפיק סרטונים ויראליים, לקדם אותם ולבנות דף נחיתה משלכם.</p>
             
             <a href="קישור_לדף_הנחיתה_שלך" class="btn-webinar">
                 לשריון מקום במפגש החינמי 🚀
             </a>
-            
-            <p style="margin-top:20px; font-size: 0.9rem; color: #9CA3AF;"></p>
         </div>
     </section>
 
